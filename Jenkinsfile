@@ -13,7 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh './PES2UG22CS607-1' // Run compiled executable
+                    sh './nonexistentfile' // Intentional error: File does not exist
                 }
             }
         }
@@ -21,14 +21,13 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-               
             }
         }
     }
 
     post {
         failure {
-            echo 'Pipeline failed'
+            echo 'Pipeline failed '
         }
     }
 }
